@@ -16,7 +16,7 @@ shinyUI
     (
       column 
       (
-        10,
+        6,
         h3('[1] Introduction'),
         p (
           'The mtcars data set contains data from the 1974 Motor Trend US magazine,',
@@ -24,14 +24,63 @@ shinyUI
           'and performance for 32 automobiles (1973-74 models).'
         ),
         br(),
-        
-        h3('[2] Column Definition'),
-        p ('Use the table below to display and filter the data to your preference.'),    
-        br(),
-        dataTableOutput(outputId="table"),
-        br()
+        p(HTML("<b>")),
+        p (
+          'Steps to execute application in RStudio:'
+        ),       
+        p(HTML("</b>")),
+        tags$ul
+        (
+          tags$li("Download Server.R and UI.R from Github"),       
+          tags$li("Github: http://github.com/amirrudindahlan/DDP/tree/master/DDP_project"),       
+          tags$li("Point to the folder where the files are downloaded to using command setwd()"),
+          tags$li("Run commands library(shiny) and then runApp()"),
+          tags$li("For details on how the application works, refer to this link: http://rpubs.com/amirrudin/60020")
+        )
       )
    ),
+   # prep a row ----------------------------------------------------------------------- 
+   fluidRow 
+   (
+     column 
+     (
+       6,
+       h3('[2] Column Definition'),
+       p ('Use the table below to display and filter the data to your preference.'),    
+       br(),
+       dataTableOutput(outputId="table"),
+       br()
+     ),
+     column 
+     (
+       4,
+       br(),
+       br(),
+       br(),
+       br(),
+       br(),
+       br(),
+       br(),
+       br(),
+       p(HTML("<b>")),
+       tags$ul
+       (
+         tags$li("mpg  - Miles/(US) gallon"),       
+         tags$li("cyl  - Number of cylinders"),       
+         tags$li("disp - Displacement (cu.in.)"),
+         tags$li("hp   - Gross horsepower"),
+         tags$li("drat - Rear axle ratio"),
+         tags$li("wt   - Weight (lb/1000)"),
+         tags$li("qsec - 1/4 mile time"),
+         tags$li("vs   - V/S"),
+         tags$li("am   - Transmission (0 = automatic, 1 = manual)"),
+         tags$li("gear - Number of forward gears"),
+         tags$li("carb - Number of carburetors")  
+       ),
+       p(HTML("</b>")),       
+       br()
+     )
+   ),   
    # prep a row ----------------------------------------------------------------------- 
    fluidRow 
    (

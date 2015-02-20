@@ -56,7 +56,7 @@ shinyServer
     output$plot4 <- renderPlot(plotModel(fit(), 4))    
     
     # render out table of dataset
-    output$table <- renderDataTable({mtcars},options = list(pageLength = 5))    
+    output$table <- renderDataTable({mtcars},options = list(pageLength = 7))    
     
   }
 )
